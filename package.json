@@ -1,7 +1,7 @@
 {
   "name": "next-typescript-twin-styled-eslint-starter",
   "version": "1.0.0",
-  "author": "Vincent Nguyen @vinhvn",
+  "author": "Connor Smiley",
   "scripts": {
     "dev": "open http://localhost:3000 && next dev",
     "build": "next build",
