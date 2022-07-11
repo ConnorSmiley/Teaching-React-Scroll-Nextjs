@@ -1,7 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import tw from "twin.macro"
-import { decrement, increment } from "@/redux/features/counterSlice";
+import { decrement, increment, addAmount } from "@/redux/features/counterSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const HomeContainer = styled.div`
@@ -34,7 +34,6 @@ const ButtonContainer = styled.div`
     `}
 `;
 
-
 const Button = styled.div`
   ${tw`
     bg-blue-500
@@ -47,17 +46,19 @@ const Button = styled.div`
     items-center
     justify-center
     rounded-xl
+    hover:cursor-pointer
     
     
     `}
 `;
 
 
-
-
 export default function Counter() {
   const count = useSelector((state:any) => state.counter.count)
   const dispatch = useDispatch()
+  const [amount, setAmount] = useState<number>(0)
+
+  const addValue = Number(amount) || 0;
 
     return(
       <HomeContainer>
@@ -68,6 +69,13 @@ export default function Counter() {
           <Button onClick={() => dispatch(decrement())}>-</Button>
           <Button onClick={() => dispatch(increment())}>+</Button>
         </ButtonContainer>
+        <input
+          type="number"
+          value={amount}
+          onChange={(event) => setAmount(event.target.value)} />
+        <Button
+        onClick={()=> dispatch(addAmount(addValue))}
+        >add</Button>
       </HomeContainer>
     )
 }
