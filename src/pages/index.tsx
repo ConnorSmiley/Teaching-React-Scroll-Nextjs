@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 const HomeContainer = styled.div`
     ${tw`
-    bg-black
+    bg-blue-500
     w-screen
     h-screen
     
