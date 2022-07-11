@@ -1,22 +1,12 @@
-import { NextPage } from 'next';
-import tw from 'twin.macro';
-import styled from "styled-components";
+import { NextPage } from "next";
+import Counter from "@/pages/Counter";
 
-
-const HomeContainer = styled.div`
-    ${tw`
-    bg-blue-500
-    w-screen
-    h-screen
-    
-    `}
-`
 
 const IndexPage: NextPage = () => {
-
   return (
-    <HomeContainer>
-    </HomeContainer>
+    <>
+    <Counter />
+    </>
   );
 };
 
