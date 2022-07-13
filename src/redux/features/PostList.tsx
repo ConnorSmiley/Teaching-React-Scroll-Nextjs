@@ -5,7 +5,7 @@ import tw from "twin.macro";
 import { allPosts } from "@/redux/features/postSlice";
 import AddPostForm from "@/redux/features/AddPostForm";
 
-const MappedContainer = styled.div`
+const Container = styled.div`
   ${tw`
   bg-black
   w-screen
@@ -13,22 +13,41 @@ const MappedContainer = styled.div`
   flex
   justify-center
   items-center
+    `}
+`;
+
+const Styles = styled.div`
+  ${tw`
+  text-white
+  flex
+  flex-col
+  items-center
+    
+    `}
+`;
+
+const MappedContainer = styled.div`
+  ${tw`
+  flex
+  items-center
+  border-2
+  border-white
+  w-[40em]
     
     `}
 `;
 
 const MappedStyles = styled.div`
   ${tw`
-    flex
-    justify-center
-    items-center
+  flex
+  p-4
     `}
 `;
 
 const ListStyles = styled.div`
   ${tw`
   text-white
-  text-4xl 
+  text-2xl 
   uppercase
   font-extrabold
     
@@ -39,23 +58,27 @@ export default function PostList() {
   const posts = useSelector(allPosts);
 
   const mapped = posts.map(x => (
-    <article key={x.id}>
-      <h3>{x.title}</h3>
-      <p>{x.content}</p>
-    </article>
+    <MappedContainer>
+      <MappedStyles>
+        <ListStyles>
+        <article key={x.id}>
+          <h3>{x.title}</h3>
+          <p>{x.content}</p>
+        </article>
+        </ListStyles>
+      </MappedStyles>
+    </MappedContainer>
   ));
 
 
   return (
     <>
-      <MappedContainer>
-        <MappedStyles>
-          <ListStyles>
-            <AddPostForm />
-            {mapped}
-          </ListStyles>
-        </MappedStyles>
-      </MappedContainer>
+      <Container>
+        <Styles>
+          <AddPostForm />
+          {mapped}
+        </Styles>
+      </Container>
     </>
   );
 }
