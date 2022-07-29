@@ -1,14 +1,27 @@
-import { NextPage } from "next";
 import React from "react";
-import PostList from "@/redux/features/PostList";
+import PageOne from "@/pages/PageOne";
+import PageTwo from "@/pages/PageTwo";
+import PageThree from "@/pages/PageThree";
+import PageFour from "@/pages/PageFour";
+import PageFive from "@/pages/PageFive";
+import Navbar from "@/components/Navbar";
 
-const IndexPage: NextPage = () => {
+export interface IindexProps {
 
-  return (
-    <>
-      <PostList />
-    </>
-  );
-};
+}
 
-export default IndexPage;
+const index: React.FunctionComponent<IindexProps> = () => {
+
+    return(
+       <>
+         <Navbar />
+         <PageOne />
+         <PageTwo />
+         <PageThree />
+         <PageFour />
+         <PageFive />
+       </>
+    )
+}
+
+export default index

@@ -11,7 +11,7 @@ You can generate your own repo from this template by using [this link](https://g
 You can also clone this repository by using the command line:
 
 ```bash
-git clone https://github.com/ConnorSmiley/Next-TailwindCSS-TwinMicro-TS-Boiler.git app
+git clone https://github.com/ConnorSmiley/Next-ts-twin-styled-BOILER_v2.git app
 cd app
 yarn # npm i
 ```
